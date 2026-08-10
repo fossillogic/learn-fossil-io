@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/fossillogic/fossil-io.git
+revision = v1.0.0
+
+[provide]
+dependency_names = fossil-io
