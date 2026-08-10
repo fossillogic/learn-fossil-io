@@ -1,5 +1,6 @@
 #include "fossil/io/output.h"
 #include "fossil/io/cipher.h"
+#include <stdlib.h>
 
 int main(void)
 {

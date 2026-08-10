@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <stdexcept>
-#include "fossil/io/cstring.hpp"
+#include "fossil/io/cstring.h"
 
 using fossil::io::CString;
 

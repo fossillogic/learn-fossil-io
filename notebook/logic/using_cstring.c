@@ -33,11 +33,11 @@ int main(void)
 
     /**
      * Print the results to the console.
-     * This uses the fossil_io_print function to display the cstring values.
+     * This uses the fossil_io_printf function to display the cstring values.
      */
-    fossil_io_print("{green}Original:{reset} %s\n", greeting);
-    fossil_io_print("{cyan}Upper:{reset} %s\n", upper);
-    fossil_io_print("{magenta}Reverse:{reset} %s\n", reversed);
+    fossil_io_printf("{green}Original:{reset} %s\n", greeting);
+    fossil_io_printf("{cyan}Upper:{reset} %s\n", upper);
+    fossil_io_printf("{magenta}Reverse:{reset} %s\n", reversed);
 
     /**
      * Demonstrate safe appending to a cstring.
@@ -64,7 +64,7 @@ int main(void)
     }
     else
     {
-        fossil_io_print("{bold}{green}%s{reset}\n", message);
+        fossil_io_printf("{bold}{green}%s{reset}\n", message);
     }
 
     /**
@@ -78,7 +78,7 @@ int main(void)
                                           money,
                                           sizeof(money)) == 0)
     {
-        fossil_io_print("{yellow}Money:{reset} %s\n", money);
+        fossil_io_printf("{yellow}Money:{reset} %s\n", money);
     }
     else
     {
@@ -95,7 +95,7 @@ int main(void)
     double amount = 0.0;
     if (fossil_io_cstring_string_to_money("$1,234.56", &amount) == 0)
     {
-        fossil_io_print("{blue}Parsed amount:{reset} %.2f\n", amount);
+        fossil_io_printf("{blue}Parsed amount:{reset} %.2f\n", amount);
     }
     else
     {
@@ -115,7 +115,7 @@ int main(void)
                                    piglatin_out,
                                    sizeof(piglatin_out)) == 0)
     {
-        fossil_io_print("{magenta}Pig Latin:{reset} %s\n", piglatin_out);
+        fossil_io_printf("{magenta}Pig Latin:{reset} %s\n", piglatin_out);
     }
 
     /**
@@ -129,7 +129,7 @@ int main(void)
                                     leet_out,
                                     sizeof(leet_out)) == 0)
     {
-        fossil_io_print("{red}Leet:{reset} %s\n", leet_out);
+        fossil_io_printf("{red}Leet:{reset} %s\n", leet_out);
     }
 
     /**
@@ -140,9 +140,9 @@ int main(void)
     cstring rot13 = fossil_io_cstring_rot13("hello world");
     cstring snake = fossil_io_cstring_upper_snake("Fossil Logic SDK");
 
-    fossil_io_print("{yellow}Mocking:{reset} %s\n", mocking);
-    fossil_io_print("{yellow}ROT13:{reset} %s\n", rot13);
-    fossil_io_print("{yellow}UPPER_SNAKE:{reset} %s\n", snake);
+    fossil_io_printf("{yellow}Mocking:{reset} %s\n", mocking);
+    fossil_io_printf("{yellow}ROT13:{reset} %s\n", rot13);
+    fossil_io_printf("{yellow}UPPER_SNAKE:{reset} %s\n", snake);
 
     /**
      * Demonstrate number word conversion.
@@ -151,7 +151,7 @@ int main(void)
     int value = 0;
     if (fossil_io_cstring_number_from_words("twenty-three", &value) == 0)
     {
-        fossil_io_print("{green}Words -> Number:{reset} %d\n", value);
+        fossil_io_printf("{green}Words -> Number:{reset} %d\n", value);
     }
 
     char words[128];
@@ -159,7 +159,7 @@ int main(void)
                                           words,
                                           sizeof(words)) == 0)
     {
-        fossil_io_print("{green}Number -> Words:{reset} %s\n", words);
+        fossil_io_printf("{green}Number -> Words:{reset} %s\n", words);
     }
 
     /**
@@ -171,7 +171,7 @@ int main(void)
         "fossil",
         "Jellyfish");
 
-    fossil_io_print("{cyan}Replaced:{reset} %s\n", replaced);
+    fossil_io_printf("{cyan}Replaced:{reset} %s\n", replaced);
 
     /**
      * Demonstrate error code lookup and description retrieval.
@@ -181,7 +181,7 @@ int main(void)
     int code_id = fossil_io_code(code);
     const char *description = fossil_io_what(code);
 
-    fossil_io_print(
+    fossil_io_printf(
         "{bold}{red}Error Lookup{reset}\n"
         "  Code: %s\n"
         "  ID:   %d\n"
@@ -206,8 +206,8 @@ int main(void)
     cstring unescaped =
         fossil_io_cstring_unescape_json(escaped);
 
-    fossil_io_print("{blue}Escaped JSON:{reset} %s\n", escaped);
-    fossil_io_print("{blue}Unescaped JSON:{reset} %s\n", unescaped);
+    fossil_io_printf("{blue}Escaped JSON:{reset} %s\n", escaped);
+    fossil_io_printf("{blue}Unescaped JSON:{reset} %s\n", unescaped);
 
     /**
      * Clean up allocated cstrings to prevent memory leaks.

@@ -23,7 +23,7 @@ int main(void)
      */
     if (!archive)
     {
-        fossil_io_output_print("Failed to open archive\n");
+        fossil_io_printf("Failed to open archive\n");
         return 1;
     }
 
@@ -32,7 +32,7 @@ int main(void)
      * This prints a human-readable listing of all entries (files/folders)
      * contained within the archive to standard output.
      */
-    fossil_io_output_print("Archive listing:\n");
+    fossil_io_printf("Archive listing:\n");
     fossil_io_archive_print(archive);
 
     /** 
@@ -42,7 +42,7 @@ int main(void)
      */
     if (fossil_io_archive_exists(archive, "readme.txt"))
     {
-        fossil_io_output_print("readme.txt exists\n");
+        fossil_io_printf("readme.txt exists\n");
     }
 
     /** 

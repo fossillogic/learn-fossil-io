@@ -1,4 +1,5 @@
 #include <string>
+#include <cstdarg>
 #include "fossil/io/error.h"
 #include "fossil/io/output.h"
 
