@@ -22,8 +22,8 @@ This repository provides learning notebooks with examples, detailed explanations
 Clone the repository:
 
 ```zsh
-git clone https://github.com/fossillearn/notebook.git
-cd <repo>
+git clone https://github.com/fossillogic/learn-fossil-io.git
+cd learn-fossil-io
 ```
 
 Open the notebooks with VSCode:
